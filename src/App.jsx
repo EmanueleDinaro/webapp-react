@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 
+import DefaultLayout from "./layouts/DefaulLayout";
 function App() {
   return (
-    <BrowserRouter>
+    /*BrowserRouter>
       <Routes>
-        <Route></Route>
+        <Route element={<DefaultLayout />}></Route>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter>*/
+    <DefaultLayout></DefaultLayout>
   );
 }
 
