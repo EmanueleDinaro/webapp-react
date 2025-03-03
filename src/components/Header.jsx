@@ -1,11 +1,12 @@
 import React from "react";
+import Logo from "./Logo";
 
 function Header() {
   return (
-    <header className="bg-gray-900 text-white py-4 px-8 shadow-md">
+    <header className="bg-gray-900 text-white px-8 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <img src="" alt="Logo" />
+          <Logo />
         </div>
       </div>
     </header>

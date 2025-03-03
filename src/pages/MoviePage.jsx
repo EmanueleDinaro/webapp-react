@@ -1,16 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "../services/axios";
 import { useParams, useNavigate } from "react-router";
 
 export default function MoviePage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [movie, setMovie] = useState({});
 
   function movieFetch() {
     axios
       .get(`/movies/${id}`)
       .then((res) => {
-        console.log(res.data);
+        setMovie(res.data);
       })
       .catch((err) => {
         if (err.status === 404) {
@@ -21,5 +22,5 @@ export default function MoviePage() {
 
   useEffect(movieFetch, []);
 
-  return <h1>Movie Page</h1>;
+  return <h1>Movie Page: {movie.title}</h1>;
 }
